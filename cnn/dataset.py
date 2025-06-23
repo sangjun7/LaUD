@@ -159,7 +159,7 @@ class test_dataset(torch.utils.data.Dataset):
                  is_rrot=False, rand_hori_flip=False, rand_vert_flip=False, grayscale=False, norm=True):
         super(test_dataset, self).__init__()
         
-        self.img_path = '/'.join([root_path, type, 'image_SRF_'+str(scale)])
+        self.img_path = '/'.join([root_path, type, 'image_SRF_'+str(2)])
         tot_img_lst = listdir(self.img_path)
         HR_lst = []
         LR_lst = []
