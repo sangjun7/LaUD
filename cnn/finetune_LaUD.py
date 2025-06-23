@@ -29,7 +29,7 @@ parser.add_argument('--rgb_shuffle', action='store_true', help='Whether to rando
 parser.add_argument('--test_dir', default=None, help='Directory for the test dataset')
 parser.add_argument('--test_data', default='Set5', help='Test dataset')
 
-parser.add_argument('--load_checkpoint', default=None, help='Path to the model checkpoint to load.')
+parser.add_argument('--load_checkpoint', default=None, help='Path to the model checkpoint to load')
 parser.add_argument('--pret_model', default=None, help='Path of pretrained model for finetuning')
 
 parser.add_argument('--save_dir', default='./Models', help='Directory to save the trained model')
@@ -135,7 +135,7 @@ for epoch in range(args.nepoch):
     if (epoch+1) % args.test_epoch == 0:
         testset = test_dataset(root_path=args.test_dir, type=args.test_data,
                                is_resize=False, resize_h=None, resize_w=None, is_rcrop=False, crop_h=None, crop_w=None, scale=args.mag, 
-                               is_rrot=False, rand_hori_flip=False, rand_vert_flip=False, rgb_shuffle=False, grayscale=False, norm=True)
+                               is_rrot=False, rand_hori_flip=False, rand_vert_flip=False, grayscale=False, norm=True)
         
         testloader = DataLoader(testset, batch_size=1, shuffle=False, num_workers=args.workers)
         model.eval()
