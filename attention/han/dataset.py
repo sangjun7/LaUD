@@ -150,7 +150,7 @@ class train_dataset(torch.utils.data.Dataset):
 class test_dataset(torch.utils.data.Dataset):
     def __init__(self, root_path=None, type='Set5',
                  is_resize=False, resize_h=144, resize_w=None, is_rcrop=False, crop_h=128, crop_w=None, scale=2, 
-                 is_rrot=False, rand_hori_flip=False, rand_vert_flip=False, rgb_shuffle=False, grayscale=False):
+                 is_rrot=False, rand_hori_flip=False, rand_vert_flip=False, grayscale=False):
         super(test_dataset, self).__init__()
         
         self.img_path = '/'.join([root_path, type, 'image_SRF_'+str(2)])
@@ -175,7 +175,6 @@ class test_dataset(torch.utils.data.Dataset):
         self.is_rrot = is_rrot
         self.rand_hori_flip = rand_hori_flip
         self.rand_vert_flip = rand_vert_flip
-        self.rgb_shuffle = rgb_shuffle
         self.grayscale = grayscale
                                
     def __getitem__(self, index):

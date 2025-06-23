@@ -119,7 +119,7 @@ for epoch in range(args.nepoch):
     if (epoch+1) % args.test_epoch == 0:
         testset = test_dataset(root_path=args.test_dir, type=args.test_data,
                                is_resize=False, resize_h=None, resize_w=None, is_rcrop=False, crop_h=None, crop_w=None, scale=args.mag, 
-                               is_rrot=False, rand_hori_flip=False, rand_vert_flip=False, rgb_shuffle=False, grayscale=False)
+                               is_rrot=False, rand_hori_flip=False, rand_vert_flip=False, grayscale=False)
         testloader = DataLoader(testset, batch_size=1, shuffle=False, num_workers=args.workers)
         model.eval()
         test_time = time.time()
